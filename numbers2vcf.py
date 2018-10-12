@@ -22,6 +22,7 @@ with open('names-numbers.vcf','w') as vcf:
     with open(filename) as txt:
         for t in txt:
             tt=str(t).rstrip('\n')
+            tt = tt.lstrip('+')
             c = 'AM' + str(n) + '-' + tt + ',' + '+' + tt 
             cc = 'BEGIN:VCARD\n' + 'VERSION:3.0\n' 
             cc = cc + 'N:' + 'AM' + str(n) + '-' + tt + ';;;\n'
