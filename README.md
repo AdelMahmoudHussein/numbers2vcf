@@ -7,6 +7,4 @@ Steps:
     
     2-type numbers file name with extention like "numbers.txt"
     
-    3-numbers without plus "+"  
-    
-    4-output file name is "names-numbers.vcf"
+    3-output file name is "names-numbers.vcf"
