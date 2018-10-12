@@ -21,15 +21,16 @@ filename = input ('Enter numbers file name with extention: ')
 with open('names-numbers.vcf','w') as vcf:
     with open(filename) as txt:
         for t in txt:
-            tt=str(t).rstrip('\n')
-            tt = tt.lstrip('+')
-            c = 'AM' + str(n) + '-' + tt + ',' + '+' + tt 
-            cc = 'BEGIN:VCARD\n' + 'VERSION:3.0\n' 
-            cc = cc + 'N:' + 'AM' + str(n) + '-' + tt + ';;;\n'
-            cc = cc + 'FN:' + 'AM' + str(n) + '\n'
-            cc = cc + 'TEL;TYPE=VOICE,CELL;VALUE=text:' + '+' + tt + '\n'
-            cc = cc + 'END:VCARD'
-            print(cc, file=vcf)
+            if len(t)> 3 :    
+                tt=str(t).strip()
+                tt = tt.lstrip('+')
+                c = 'AM' + str(n) + '-' + tt + ',' + '+' + tt 
+                cc = 'BEGIN:VCARD\n' + 'VERSION:3.0\n' 
+                cc = cc + 'N:' + 'AM' + str(n) + '-' + tt + ';;;\n'
+                cc = cc + 'FN:' + 'AM' + str(n) + '\n'
+                cc = cc + 'TEL;TYPE=VOICE,CELL;VALUE=text:' + '+' + tt + '\n'
+                cc = cc + 'END:VCARD'
+                print(cc, file=vcf)
             n+=1
             
 print('\nDone\n')
